@@ -1,0 +1,115 @@
+{
+  "Identifier": "TR-NL-0100",
+  "Type": "Acceptance",
+  "Country": "NL",
+  "Version": "1.0.0",
+  "SchemaVersion": "1.0.0",
+  "Engine": "CERTLOGIC",
+  "EngineVersion": "0.8.2",
+  "CertificateType": "Test",
+  "Description": [
+    {
+      "lang": "en",
+      "desc": "Check for sufficient tests when coming from a EU country classified as \"orange very high risk VOC\"."
+    }
+  ],
+  "ValidFrom": "2021-08-08T00:00:00Z",
+  "ValidTo": "2030-06-01T00:00:00Z",
+  "AffectedFields": [
+    "t.0",
+    "t.0.sc",
+    "t.0.tt"
+  ],
+  "Logic": {
+    "if": [
+      {
+        "var": "payload.t.0"
+      },
+      {
+        "!": [
+          {
+            "and": [
+              {
+                "!": [
+                  {
+                    "and": [
+                      {
+                        "===": [
+                          {
+                            "var": "payload.t.0.tt"
+                          },
+                          "LP6464-4"
+                        ]
+                      },
+                      {
+                        "before": [
+                          {
+                            "plusTime": [
+                              {
+                                "var": "external.validationClock"
+                              },
+                              0,
+                              "day"
+                            ]
+                          },
+                          {
+                            "plusTime": [
+                              {
+                                "var": "payload.t.0.sc"
+                              },
+                              24,
+                              "hour"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "!": [
+                  {
+                    "and": [
+                      {
+                        "===": [
+                          {
+                            "var": "payload.t.0.tt"
+                          },
+                          "LP217198-3"
+                        ]
+                      },
+                      {
+                        "before": [
+                          {
+                            "plusTime": [
+                              {
+                                "var": "external.validationClock"
+                              },
+                              0,
+                              "day"
+                            ]
+                          },
+                          {
+                            "plusTime": [
+                              {
+                                "var": "payload.t.0.sc"
+                              },
+                              48,
+                              "hour"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      true
+    ]
+  }
+}

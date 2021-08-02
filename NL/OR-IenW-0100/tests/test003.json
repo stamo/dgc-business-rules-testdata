@@ -1,0 +1,16 @@
+{
+  "name": "NAAT >= 24h",
+  "payload": {
+    "t": [
+      {
+        "tt": "LP6464-4",
+        "sc": "2021-08-07T00:00:00+00:00"
+      }
+    ]
+  },
+  "expected": false,
+  "external": {
+    "validationClock": "2021-08-08T00:00:00+00:00",
+    "valueSets": {}
+  }
+}

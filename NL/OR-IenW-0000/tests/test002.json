@@ -1,0 +1,11 @@
+{
+  "name": "false OR true = true",
+  "payload": {
+    "left": false,
+    "right": true
+  },
+  "expected": true,
+  "external": {
+    "valueSets": {}
+  }
+}

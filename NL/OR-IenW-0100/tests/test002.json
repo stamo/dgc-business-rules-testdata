@@ -1,0 +1,10 @@
+{
+  "name": "t == empty array",
+  "payload": {
+    "t": []
+  },
+  "expected": true,
+  "external": {
+    "valueSets": {}
+  }
+}

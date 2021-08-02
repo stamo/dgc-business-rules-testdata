@@ -1,0 +1,8 @@
+{
+  "name": "empty DCC",
+  "payload": {},
+  "expected": true,
+  "external": {
+    "valueSets": {}
+  }
+}

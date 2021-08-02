@@ -1,0 +1,32 @@
+{
+  "Identifier": "TR-NL-0100",
+  "Type": "Acceptance",
+  "Country": "NL",
+  "Version": "1.0.0",
+  "SchemaVersion": "1.0.0",
+  "Engine": "CERTLOGIC",
+  "EngineVersion": "0.8.2",
+  "CertificateType": "Test",
+  "Description": [
+    {
+      "lang": "en",
+      "desc": "Implement an OR with AND and NOT."
+    }
+  ],
+  "ValidFrom": "2021-08-08T00:00:00Z",
+  "ValidTo": "2030-06-01T00:00:00Z",
+  "AffectedFields": [
+    "left",
+    "right"
+  ],
+  "Logic": {
+    "or": [
+      {
+        "var": "payload.left"
+      },
+      {
+        "var": "payload.right"
+      }
+    ]
+  }
+}
